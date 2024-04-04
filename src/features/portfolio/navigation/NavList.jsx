@@ -60,6 +60,10 @@ const LineIndicator = styled(motion.span)`
   background-color: var(--color-brand-700);
 `;
 
+const Nav = styled(motion.a)`
+  cursor: pointer;
+`;
+
 const ItemContent = styled.div`
   margin-left: 1rem;
 `;
@@ -87,35 +91,39 @@ const NavList = ({ children }) => {
 };
 
 const Item = ({ children, to = "" }) => {
-  const { setActiveId, activeId } = useActive();
   const current = window.location.hash;
+  const { setActiveId, activeId, setScrollSelected } = useActive();
 
   const id = to.replace("#", "");
   const active = activeId === id;
 
-  useEffect(() =>
-  {
+  useEffect(() => {
     if (!current) return;
-    if (current.replace("#", "") == active) {
-      document.querySelector(current).scrollIntoView();
+    if (activeId == current.replace("#", "")) {
+      document
+        .querySelector(current)
+        .scrollIntoView({ behavior: "smooth", block: "center" });
     }
-  }, [active, current]);
+  });
 
   return (
-    <StyledItem animate={active ? "active" : "inactive"}>
+    <StyledItem animate={active ? "active" : "inactive"} layoutScroll>
       {active && <Indicator layout layoutId="my-nav" />}
       {!active && <div></div>}
       <LineIndicator variants={lineVariant} style={{ originX: 0 }} />
-      <motion.a
+      <Nav
         style={{ display: "inline-block" }}
         href={to}
-        onClick={() => setActiveId(id)}
+        onClick={() => {
+          setActiveId(id);
+          setScrollSelected(id);
+        }}
         variants={navVariant}
       >
         <Colored as={ItemContent} reverse={active ? "true" : "false"}>
           {children}
         </Colored>
-      </motion.a>
+      </Nav>
     </StyledItem>
   );
 };

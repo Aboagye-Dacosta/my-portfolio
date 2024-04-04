@@ -54,6 +54,8 @@ export const StyledRow2 = styled.div`
 
 function ExperienceCard({
   experience: { image, link: { link }, description, name, builtWith = [] } = {},
+
+  
 }) {
   return (
     <>

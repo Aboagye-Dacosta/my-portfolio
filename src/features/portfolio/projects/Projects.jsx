@@ -27,7 +27,6 @@ function Projects() {
         <ProjectItem key={project.id} project={project} />
       ))}
       <Spacer />
-
       <Row items="center" justify="start" type="horizontal">
         <Colored>
           <StyledLink to="/projects">

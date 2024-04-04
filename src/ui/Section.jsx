@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import { useActive } from "../features/portfolio/navigation/ActiveNavProvider";
 import { breakpoint } from "../styles/GlobalStyles";
@@ -25,12 +26,16 @@ const SectionHeader = styled.header`
 
 function Section({ children, title, id }) {
   const { setActiveId } = useActive();
+  const { ref } = useInView({
+    threshold: 0.5,
+    delay: 900,
+    onChange: (inView, entry) => {
+      if (entry.isIntersecting && inView) setActiveId(id);
+    },
+  });
+
   return (
-    <StyledSection
-      viewport={{ amount: 0.5 }}
-      onViewportEnter={() => setActiveId(id)}
-      id={id}
-    >
+    <StyledSection id={id} ref={ref}>
       {title && (
         <SectionHeader>
           <Heading as="h2">{title}</Heading>

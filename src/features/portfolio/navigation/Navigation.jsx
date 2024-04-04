@@ -25,8 +25,6 @@ const Navigator = styled.div`
   align-items: flex-start;
   flex-direction: column;
 
-  /* background-color: red; */
-
   @media screen and (min-width: ${breakpoint.desktop}) {
     position: fixed;
     height: 95vh;

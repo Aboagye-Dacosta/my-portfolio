@@ -18,18 +18,15 @@ ActiveNavProvider.propTypes = {
 
 const useActiveContext = () => {
   const selected = window.location.hash;
-  const [activeId, setActiveId] = useState(
-    selected ? selected.replace("#", "") : "about-me"
-  );
-
- 
+  const [activeId, setActiveId] = useState("about-me");
+  const [scrollSelected, setScrollSelected] = useState("");
 
   useEffect(() => {
     if (!selected) return;
-    document.querySelector(selected)?.scrollIntoView();
+    setActiveId(selected.replace("#", ""));
   }, [selected]);
 
-  return { activeId, setActiveId };
+  return { scrollSelected, activeId, setActiveId, setScrollSelected };
 };
 
 const useActive = () => {
