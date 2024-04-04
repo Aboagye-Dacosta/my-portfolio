@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import PropTypes from "prop-types"
 import styled from "styled-components";
 import { ActiveNavProvider } from "./navigation/ActiveNavProvider";
 
@@ -7,14 +7,16 @@ const StyledPortfolioLayout = styled.div`
   min-height: 100vh;
 `;
 
-function PortfolioLayout() {
+function PortfolioLayout({ children }) {
   return (
     <ActiveNavProvider>
-      <StyledPortfolioLayout>
-        <Outlet />
-      </StyledPortfolioLayout>
+      <StyledPortfolioLayout>{children}</StyledPortfolioLayout>
     </ActiveNavProvider>
   );
+}
+
+PortfolioLayout.propTypes = {
+  children: PropTypes.any
 }
 
 export default PortfolioLayout;

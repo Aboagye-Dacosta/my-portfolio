@@ -66,9 +66,9 @@ function DashboardHeader() {
       <Logo src={logo} />
       <Tabs>
         {/* <NavItem to="/dashboard/statistics">Dashboard</NavItem> */}
-        <NavItem to="/dacosta/dashboard/about-me">About me</NavItem>
-        <NavItem to="/dacosta/dashboard/projects">Projects</NavItem>
-        <NavItem to="/dacosta/dashboard/display">Display</NavItem>
+        <NavItem to="/dashboard/about-me">About me</NavItem>
+        <NavItem to="/dashboard/projects">Projects</NavItem>
+        <NavItem to="/dashboard/display">Display</NavItem>
       </Tabs>
       <Auth>
         <Button as={Link} size="small" to="/">
@@ -76,7 +76,7 @@ function DashboardHeader() {
         </Button>
         <Spacer type="horizontal" />
         <StyledLink
-          to="/dacosta/dashboard/user"
+          to="/dashboard/user"
           className={({ isActive }) => (isActive ? "active" : null)}
         >
           <Row type="horizontal" items="center" justify="center">

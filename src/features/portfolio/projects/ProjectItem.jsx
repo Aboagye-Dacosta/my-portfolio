@@ -6,7 +6,6 @@ import Colored from "../../../ui/Colored";
 import Heading from "../../../ui/Heading";
 import Image from "../../../ui/Image";
 import Paragraph from "../../../ui/Paragraph";
-import Row from "../../../ui/Row";
 import { StyledRow2 } from "../experience/ExperienceCard";
 
 const StyledRow = styled(Card)`

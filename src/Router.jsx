@@ -30,11 +30,11 @@ function Router() {
             </AuthProvider>
           }
         >
-          <Route path="/" element={<Navigate to="/dacosta/dashboard/about-me" />} />
+          <Route path="/" element={<Navigate to="/dashboard/about-me" />} />
           <Route path="/about-me" element={<AboutMe />}>
             <Route
               path="/about-me"
-              element={<Navigate to="/dacosta/dashboard/about-me/description" />}
+              element={<Navigate to="/dashboard/about-me/description" />}
             />
             <Route path="description" element={<AboutMeDescription />} />
             <Route path="what-i-do" element={<WhatIdoAndAm />} />
@@ -49,7 +49,7 @@ function Router() {
           <Route path="/display" element={<CategoryDisplay />}>
             <Route
               path="/display"
-              element={<Navigate to="/dacosta/dashboard/display/regular" replace />}
+              element={<Navigate to="/dashboard/display/regular" replace />}
             />
             <Route path="regular" element={<DisplayRegular />} />
             <Route path="experiences" element={<DisplayExperiences />} />

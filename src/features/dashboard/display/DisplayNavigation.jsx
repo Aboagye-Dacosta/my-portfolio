@@ -9,10 +9,10 @@ flex-direction: column;
 function DisplayNavigation() {
   return (
     <StyledDisplayNavigation>
-      <DisplayNavItem to="/dacosta/dashboard/display/regular">
+      <DisplayNavItem to="/dashboard/display/regular">
         Regular Projects
       </DisplayNavItem>
-      <DisplayNavItem to="/dacosta/dashboard/display/experiences">
+      <DisplayNavItem to="/dashboard/display/experiences">
         Experiences
       </DisplayNavItem>
     </StyledDisplayNavigation>
