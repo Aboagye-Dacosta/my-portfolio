@@ -7,7 +7,7 @@ function AuthProvider({ children }) {
   console.log(user);
 
   if (!isLoadingUser && !isValidated)
-    return navigate("/dacosta/dashboard/login", { replace: true });
+    return navigate("/dashboard/login", { replace: true });
 
   if (isValidated) return children;
 }
