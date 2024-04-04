@@ -27,18 +27,11 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<PortfolioLayout />}>
-              <Route
-                path="/"
-                element={<Navigate to="/dacosta-portfolio" />}
-                replace
-              />
-              <Route path="dacosta-portfolio" element={<Portfolio />} />
-              <Route
-                path="/dacosta-portfolio/projects"
-                element={<AllProjects />}
-              />
+              <Route path="/" element={<Navigate to="/dacosta" />} replace />
+              <Route path="dacosta" element={<Portfolio />} />
+              <Route path="/dacosta/projects" element={<AllProjects />} />
+              <Route path="/dacosta/dashboard/*" element={<Router />} />
             </Route>
-            <Route path="/dashboard/*" element={<Router />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>

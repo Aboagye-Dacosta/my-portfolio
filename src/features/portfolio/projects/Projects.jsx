@@ -30,7 +30,7 @@ function Projects() {
 
       <Row items="center" justify="start" type="horizontal">
         <Colored>
-          <StyledLink to="/dacosta-portfolio/projects">
+          <StyledLink to="/dacosta/projects">
             See all my projects <span>&rarr;</span>
           </StyledLink>
         </Colored>

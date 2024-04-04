@@ -14,7 +14,7 @@ const StyledCard = styled(Card)`
   margin-top: 3rem;
 
   @media screen and (min-width: ${breakpoint.desktop}) {
-    margin-top: 0;
+    margin-top: 2rem;
   }
 `;
 

@@ -12,16 +12,18 @@ const StyledAboutMeNavigation = styled.nav`
 function AboutMeNavigation() {
   return (
     <StyledAboutMeNavigation>
-      <AboutMeNavItem to="/dashboard/about-me/description">
+      <AboutMeNavItem to="/dacosta/dashboard/about-me/description">
         Description
       </AboutMeNavItem>
-      <AboutMeNavItem to="/dashboard/about-me/what-i-do">
+      <AboutMeNavItem to="/dacosta/dashboard/about-me/what-i-do">
         What I do and am
       </AboutMeNavItem>
-      <AboutMeNavItem to="/dashboard/about-me/social">
+      <AboutMeNavItem to="/dacosta/dashboard/about-me/social">
         Social links
       </AboutMeNavItem>
-      <AboutMeNavItem to="/dashboard/about-me/brand">Brand</AboutMeNavItem>
+      <AboutMeNavItem to="/dacosta/dashboard/about-me/brand">
+        Brand
+      </AboutMeNavItem>
     </StyledAboutMeNavigation>
   );
 }

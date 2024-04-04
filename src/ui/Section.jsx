@@ -29,8 +29,8 @@ function Section({ children, title, id }) {
     <StyledSection
       viewport={{ amount: 0.5 }}
       onViewportEnter={() => setActiveId(id)}
+      id={id}
     >
-      <span id={id}></span>
       {title && (
         <SectionHeader>
           <Heading as="h2">{title}</Heading>

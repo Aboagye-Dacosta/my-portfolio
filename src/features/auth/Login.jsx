@@ -49,7 +49,9 @@ function Login() {
   const [password, setPassword] = useState("");
 
   if (isValidated)
-    return navigate("/dashboard/about-me/description", { replace: true });
+    return navigate("/dacosta/dashboard/about-me/description", {
+      replace: true,
+    });
 
   const handleLogin = () => {
     if (!email || !password) {

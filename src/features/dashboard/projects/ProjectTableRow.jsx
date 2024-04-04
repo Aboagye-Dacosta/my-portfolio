@@ -48,7 +48,7 @@ function ProjectTableRow({
           size="small"
           variation="secondary"
           as={Link}
-          to={`/dashboard/projects/edit/${id}`}
+          to={`/dacosta/dashboard/projects/edit/${id}`}
         >
           <FaPencil />
         </Button>
@@ -70,7 +70,7 @@ function ProjectTableRow({
           size="small"
           variation="secondary"
           as={Link}
-          to={`/dashboard/projects/${id}`}
+          to={`/dacosta/dashboard/projects/${id}`}
         >
           <FaGripHorizontal />
         </Button>
