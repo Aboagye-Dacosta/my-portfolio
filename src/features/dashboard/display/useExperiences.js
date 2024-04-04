@@ -12,11 +12,11 @@ export function useExperiences() {
     queryKey: ["experiences"],
     queryFn: getExperiences,
     initialData: queryClient
-      .getQueriesData(["projects"])
+      .getQueriesData(["projects", "all"])
       ?.filter(
         (project) => String(project.type).toLowerCase() === "experience"
       ),
-    initialDataUpdatedAt: queryClient.getQueryState(["projects"])
+    initialDataUpdatedAt: queryClient.getQueryState(["projects", "all"])
       ?.dataUpdatedAt,
   });
 

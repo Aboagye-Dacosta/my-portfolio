@@ -22,9 +22,11 @@ const useActiveContext = () => {
     selected ? selected.replace("#", "") : "about-me"
   );
 
+ 
+
   useEffect(() => {
     if (!selected) return;
-    document.querySelector(selected).scrollIntoView();
+    document.querySelector(selected)?.scrollIntoView();
   }, [selected]);
 
   return { activeId, setActiveId };

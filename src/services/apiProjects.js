@@ -14,8 +14,14 @@ export async function getProject(projectId) {
 }
 
 //read all projects
-export async function getProjects() {
-  const { data, error } = await supabase.from("projects").select();
+export async function getProjects(filter) {
+  let query = supabase.from("projects").select();
+
+  if (filter !== "all") {
+    query = query.eq("type", filter);
+  }
+
+  const { data, error } = await query;
 
   if (error) throw new Error(error.message);
 

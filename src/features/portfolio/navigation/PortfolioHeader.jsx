@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { IoMdBookmark } from "react-icons/io";
 import styled from "styled-components";
 
+import { breakpoint } from "../../../styles/GlobalStyles";
 import Heading from "../../../ui/Heading";
 import Logo from "../../../ui/Logo";
 import Name from "../../../ui/Name";
@@ -14,20 +15,55 @@ const MarkIcon = styled(IoMdBookmark)`
   color: var(--color-brand-700);
 `;
 
+const StyledProfileHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+
+  @media screen and (min-width: ${breakpoint.desktop}) {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: start;
+    padding: 0;
+    gap: 2rem;
+  }
+`;
+
+const StyledRow = styled(Row)`
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: ${breakpoint.desktop}) {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+`;
+
+const StyledHeading = styled(Heading)`
+  text-align: center;
+
+  @media screen and (min-width: ${breakpoint.desktop}) {
+    text-align: left;
+  }
+`;
+
 function PortfolioHeader({ children }) {
   const {
     strings: { whoIAm, whatIDo, name, logo },
   } = useStrings();
   return (
     <>
-      <Row type="horizontal" gap={2}>
+      <StyledProfileHeader>
         <div>
           <Logo src={logo} />
         </div>
-        <Row>
-          <Heading>
+        <StyledRow>
+          <StyledHeading>
             <Name name={name} />
-          </Heading>
+          </StyledHeading>
           <Heading as="h6">{whoIAm}</Heading>
           <Row type="horizontal">
             <MarkIcon />
@@ -35,8 +71,8 @@ function PortfolioHeader({ children }) {
           </Row>
           <Spacer />
           {children}
-        </Row>
-      </Row>
+        </StyledRow>
+      </StyledProfileHeader>
     </>
   );
 }

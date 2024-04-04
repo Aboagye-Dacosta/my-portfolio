@@ -18,7 +18,7 @@ const SectionHeader = styled.header`
   font-weight: bold;
   z-index: 1000;
 
-  @media screen and (min-width: ${breakpoint.tablet}) {
+  @media screen and (min-width: ${breakpoint.desktop}) {
     display: none;
   }
 `;
@@ -27,10 +27,10 @@ function Section({ children, title, id }) {
   const { setActiveId } = useActive();
   return (
     <StyledSection
-      id={id}
       viewport={{ amount: 0.5 }}
       onViewportEnter={() => setActiveId(id)}
     >
+      <span id={id}></span>
       {title && (
         <SectionHeader>
           <Heading as="h2">{title}</Heading>

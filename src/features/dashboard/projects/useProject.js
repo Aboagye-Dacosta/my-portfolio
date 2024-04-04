@@ -13,9 +13,9 @@ export function useProject() {
     queryKey: ["project", projectId],
     queryFn: () => getProject(projectId),
     initialData: queryClient
-      .getQueryData(["projects"])
+      .getQueryData(["projects","all"])
       .find((project) => String(project.id) === projectId),
-    initialDataUpdatedAt: queryClient.getQueryState(["projects"]).dataUpdatedAt,
+    initialDataUpdatedAt: queryClient.getQueryState(["projects","all"]).dataUpdatedAt,
   });
 
   return { project, isLoadingProject };

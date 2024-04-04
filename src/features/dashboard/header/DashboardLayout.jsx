@@ -30,11 +30,11 @@ function DashboardLayout() {
   const { isLoadingStrings } = useStrings();
   const { isLoadingLinks } = useSocialLinks();
 
-  if (isLoadingStrings || isLoadingProjects || isLoadingLinks)
-    return <FullPageLoader />;
-
   return (
     <>
+      {(isLoadingStrings || isLoadingProjects || isLoadingLinks) && (
+        <FullPageLoader screenType="dashboard" />
+      )}
       <BackgroundGradient />
       <StyledDashboardLayout>
         <DashboardHeader />

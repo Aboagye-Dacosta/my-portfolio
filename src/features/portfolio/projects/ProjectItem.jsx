@@ -7,12 +7,14 @@ import Heading from "../../../ui/Heading";
 import Image from "../../../ui/Image";
 import Paragraph from "../../../ui/Paragraph";
 import Row from "../../../ui/Row";
+import { StyledRow2 } from "../experience/ExperienceCard";
 
-const StyledRow = styled.div`
+const StyledRow = styled(Card)`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  margin-top: 3rem;
 
   @media screen and (max-width: ${breakpoint.mobile}) {
     flex-direction: column;
@@ -23,17 +25,17 @@ function ProjectItem({
   project: { image, description, dateBuilt, link: { link } = {} } = {},
 }) {
   return (
-    <Card as="a" href={link} target="_blank">
+    <a href={link}>
       <StyledRow>
         <Image src={image} />
-        <Row>
+        <StyledRow2>
           <Heading as="h3">
             <Colored>{new Date(dateBuilt).getFullYear()}</Colored>
           </Heading>
           <Paragraph>{description}</Paragraph>
-        </Row>
+        </StyledRow2>
       </StyledRow>
-    </Card>
+    </a>
   );
 }
 

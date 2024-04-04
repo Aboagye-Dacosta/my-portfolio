@@ -19,7 +19,7 @@ function WhatIdoAndAm() {
     register,
     formState: { errors },
     reset,
-  } = useForm({ defaultValues: strings });
+  } = useForm({ values: strings });
 
   const onSubmit = (data) => {
     updateAboutMe(data);

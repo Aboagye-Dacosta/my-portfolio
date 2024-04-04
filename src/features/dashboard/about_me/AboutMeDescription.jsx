@@ -20,7 +20,7 @@ function AboutMeDescription() {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm({ defaultValues: strings });
+  } = useForm({ values: strings });
 
   const onSubmit = (data) => {
     updateAboutMe(data);

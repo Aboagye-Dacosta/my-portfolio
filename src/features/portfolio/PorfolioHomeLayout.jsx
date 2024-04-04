@@ -7,12 +7,17 @@ const StyledPortfolioHomeLayout = styled.div`
   flex-direction: column;
   min-height: 100vh;
   position: relative;
+  padding: 0 0.5rem 0;
 
-  @media (min-width: ${breakpoint.tablet}) {
+  @media screen and (min-width: ${breakpoint.tablet}) {
+    padding: 0 15rem 0;
+  }
+
+  @media (min-width: ${breakpoint.desktop}) {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
     gap: 3rem;
-    padding: 0 5rem 0;
+
     /* overflow: hidden; */
   }
 `;

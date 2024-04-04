@@ -27,15 +27,13 @@ const Navigator = styled.div`
 
   /* background-color: red; */
 
-  @media screen and (min-width: ${breakpoint.tablet}) {
+  @media screen and (min-width: ${breakpoint.desktop}) {
     position: fixed;
     height: 95vh;
     width: 35dvw;
     left: 10rem;
   }
 `;
-
-
 
 function Navigation() {
   return (

@@ -8,11 +8,9 @@ export function useRegular() {
     queryKey: ["regular"],
     queryFn: getRegular,
     initialData: queryClient
-      .getQueriesData(["projects"])
-      ?.filter(
-        (project) => String(project.type).toLowerCase() === "regular"
-      ),
-    initialDataUpdatedAt: queryClient.getQueryState(["projects"])
+      .getQueriesData(["projects", "all"])
+      ?.filter((project) => String(project.type).toLowerCase() === "regular"),
+    initialDataUpdatedAt: queryClient.getQueryState(["projects", "all"])
       ?.dataUpdatedAt,
   });
 

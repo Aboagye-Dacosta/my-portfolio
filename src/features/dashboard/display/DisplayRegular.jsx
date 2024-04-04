@@ -1,4 +1,5 @@
 import Row from "../../../ui/Row";
+import Spacer from "../../../ui/Spacer";
 import { useUpdateProject } from "../projects/useUpdateProject";
 import DisplayCard from "./DisplayCard";
 import SelectDisplay from "./SelectDisplay";
@@ -23,6 +24,7 @@ function DisplayRegular() {
   return (
     <div>
       <SelectDisplay options={options} onClick={handleSelected} />
+      <Spacer />
       <Row type="horizontal" wrap="wrap">
         {regular
           .filter((experience) => experience.show)

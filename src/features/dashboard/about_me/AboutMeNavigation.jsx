@@ -2,11 +2,11 @@ import styled from "styled-components";
 import AboutMeNavItem from "./AboutMeNavItem";
 
 const StyledAboutMeNavigation = styled.nav`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
-    position: fixed;
+  position: fixed;
 `;
 
 function AboutMeNavigation() {

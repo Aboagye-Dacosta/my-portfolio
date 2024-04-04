@@ -9,7 +9,7 @@ import { useActive } from "./ActiveNavProvider";
 const StyledNavList = styled.ul`
   display: none;
 
-  @media screen and (min-width: ${breakpoint.tablet}) {
+  @media screen and (min-width: ${breakpoint.desktop}) {
     display: block;
     position: relative;
 
