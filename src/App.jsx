@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import PortfolioLayout from "./features/portfolio/PortfolioLayout";
@@ -13,6 +14,15 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <Toaster
+        position="top-center"
+        gutter={8}
+        toastOptions={{
+          style: {
+            backgroundColor: "var(--color-black)",
+          },
+        }}
+      />
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>

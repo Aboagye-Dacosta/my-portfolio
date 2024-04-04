@@ -1,10 +1,12 @@
-import { Toaster } from "react-hot-toast";
 import { Navigate, Route, Routes } from "react-router-dom";
 
+import AuthProvider from "./features/auth/AuthProvider";
+import Login from "./features/auth/Login";
 import AboutMeBrand from "./features/dashboard/about_me/AboutMeBrand";
 import AboutMeDescription from "./features/dashboard/about_me/AboutMeDescription";
 import SocialLinks from "./features/dashboard/about_me/SocialLinks";
 import WhatIdoAndAm from "./features/dashboard/about_me/WhatIdoAndAm";
+import DisplayExperiences from "./features/dashboard/display/DisplayExperiences";
 import DisplayRegular from "./features/dashboard/display/DisplayRegular";
 import DashboardLayout from "./features/dashboard/header/DashboardLayout";
 import EditProject from "./features/dashboard/projects/EditProject";
@@ -13,23 +15,21 @@ import Project from "./features/dashboard/projects/Project";
 import User from "./features/dashboard/user/User";
 import AboutMe from "./pages/AboutMe";
 import CategoryDisplay from "./pages/CategoryDisplay";
+import PageNotFound from "./pages/PageNotFound";
 import Projects from "./pages/Projects";
-import DisplayExperiences from "./features/dashboard/display/DisplayExperiences";
 
 function Router() {
   return (
     <div>
-      <Toaster
-        position="top-center"
-        gutter={8}
-        toastOptions={{
-          style: {
-            backgroundColor: "var(--color-black)",
-          },
-        }}
-      />
       <Routes>
-        <Route path="/" element={<DashboardLayout />}>
+        <Route
+          path="/"
+          element={
+            <AuthProvider>
+              <DashboardLayout />
+            </AuthProvider>
+          }
+        >
           <Route path="/" element={<Navigate to="/dashboard/about-me" />} />
           <Route path="/about-me" element={<AboutMe />}>
             <Route
@@ -55,6 +55,8 @@ function Router() {
             <Route path="experiences" element={<DisplayExperiences />} />
           </Route>
         </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </div>
   );
