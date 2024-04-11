@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import Heading from "./Heading";
+import Paragraph from "./Paragraph";
 import Spacer from "./Spacer";
 import Spinner from "./Spinner";
 
@@ -17,7 +17,7 @@ const StyledFullPageLoader = styled.div`
   opacity: 1;
 `;
 
-function FullPageLoader({ screenType ="portfolio" }) {
+function FullPageLoader({ screenType = "portfolio" }) {
   return (
     <StyledFullPageLoader>
       <div>
@@ -25,9 +25,9 @@ function FullPageLoader({ screenType ="portfolio" }) {
       </div>
       <Spacer />
       {screenType == "portfolio" && (
-        <Heading as="h2">
+        <Paragraph align="center">
           Wait a moment I am getting everything ready 😁 ...{" "}
-        </Heading>
+        </Paragraph>
       )}
     </StyledFullPageLoader>
   );
