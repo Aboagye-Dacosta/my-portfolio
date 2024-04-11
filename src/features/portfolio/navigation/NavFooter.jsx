@@ -4,11 +4,7 @@ import {
   FaSquareGithub,
   FaSquareTwitter,
 } from "react-icons/fa6";
-import { IoMail } from "react-icons/io5";
 import styled from "styled-components";
-import Colored from "../../../ui/Colored";
-import Modal from "../../../ui/Modal";
-import MailForm from "../MailForm";
 
 const StyledNavFooter = styled.div`
   display: flex;
@@ -48,17 +44,6 @@ function NavFooter() {
       <a href="https://dacostasolomon-codeman.hashnode.dev">
         <FaHashnode />
       </a>
-      <Modal>
-        <Modal.Open opens="mail-form">
-          <Colored as="span">
-            <IoMail />
-          </Colored>
-        </Modal.Open>
-
-        <Modal.Window name="mail-form">
-          <MailForm />
-        </Modal.Window>
-      </Modal>
     </StyledNavFooter>
   );
 }

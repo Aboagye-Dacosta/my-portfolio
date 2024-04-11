@@ -60,7 +60,7 @@ function WhatIdoAndAm() {
               type="reset"
               variation="secondary"
               onClick={() => {
-                console.log("reset");
+
                 reset();
               }}
             >

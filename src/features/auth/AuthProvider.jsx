@@ -3,8 +3,8 @@ import { useUser } from "./useUser";
 
 function AuthProvider({ children }) {
   const navigate = useNavigate();
-  const { isLoadingUser, isValidated, user } = useUser();
-  console.log(user);
+  const { isLoadingUser, isValidated } = useUser();
+
 
   if (!isLoadingUser && !isValidated)
     return navigate("/dashboard/login", { replace: true });

@@ -4,6 +4,7 @@ import { breakpoint } from "../../styles/GlobalStyles";
 import FullPageLoader from "../../ui/FullPageLoader";
 import { useStrings } from "../dashboard/about_me/useStrings";
 import { useExperiences } from "../dashboard/display/useExperiences";
+import { useRegular } from "../dashboard/display/useRegular";
 import { useProjects } from "../dashboard/projects/useProjects";
 import About from "./about/About";
 import Experience from "./experience/Experience";
@@ -27,13 +28,17 @@ const Container = styled.main`
 `;
 
 function PortfolioDetails() {
-  const { isLoadingProjects ,isFetchingProject ,isPaused} = useProjects();
-  const { isLoadingStrings,isFetchingStrings } = useStrings();
-  const { isLoadingExperiences, isFetchingExperiences } = useExperiences();
-  
-  console.log(isFetchingExperiences,isFetchingProject,isFetchingStrings,isPaused)
+  const { isLoadingProjects } = useProjects();
+  const { isLoadingStrings } = useStrings();
+  const { isLoadingRegular } = useRegular();
+  const { isLoadingExperiences } = useExperiences();
 
-  if (isLoadingExperiences || isLoadingStrings || isLoadingProjects)
+  if (
+    isLoadingExperiences ||
+    isLoadingStrings ||
+    isLoadingProjects ||
+    isLoadingRegular
+  )
     return <FullPageLoader />;
 
   return (

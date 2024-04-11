@@ -11,6 +11,7 @@ const StyledSection = styled(motion.div)`
   flex-direction: column;
   margin: 0 0 10rem 0;
 `;
+
 const SectionHeader = styled.header`
   position: sticky;
   top: 0;
@@ -28,7 +29,6 @@ function Section({ children, title, id }) {
   const { setActiveId } = useActive();
   const { ref } = useInView({
     threshold: 0.5,
-    delay: 900,
     onChange: (inView, entry) => {
       if (entry.isIntersecting && inView) setActiveId(id);
     },
