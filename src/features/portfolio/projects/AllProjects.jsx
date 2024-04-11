@@ -9,6 +9,7 @@ import ProjectsTable from "./ProjectsTable";
 const StyledAllProjects = styled.div`
   padding: 5rem;
   z-index: 1000;
+  min-height: 100vh;
   position: relative;
   background-color: var(--color-black);
 `;
