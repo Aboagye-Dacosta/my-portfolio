@@ -69,6 +69,7 @@ function DashboardHeader() {
         <NavItem to="/dashboard/about-me">About me</NavItem>
         <NavItem to="/dashboard/projects">Projects</NavItem>
         <NavItem to="/dashboard/display">Display</NavItem>
+        <NavItem to="/dashboard/certifications">Certifications</NavItem>
       </Tabs>
       <Auth>
         <Button as={Link} size="small" to="/">

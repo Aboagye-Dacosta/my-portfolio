@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { NavLink, useLocation } from "react-router-dom";
 import styled, { css } from "styled-components";
+import ActiveNav from "../../../ui/ActiveNav";
 
 const StyledNavItem = styled(NavLink)`
   padding: 1rem 2rem;
@@ -13,18 +13,6 @@ const StyledNavItem = styled(NavLink)`
           color: var(--color-grey-500);
         `
       : null}
-`;
-
-const ActiveNav = styled(motion.span)`
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  border-radius: var(--border-radius-sm);
-  background-color: var(--color-brand-700);
 `;
 
 function NavItem({ children, to }) {

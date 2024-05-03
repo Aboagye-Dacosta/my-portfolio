@@ -15,6 +15,7 @@ import Project from "./features/dashboard/projects/Project";
 import User from "./features/dashboard/user/User";
 import AboutMe from "./pages/AboutMe";
 import CategoryDisplay from "./pages/CategoryDisplay";
+import Certifications from "./pages/Certifications";
 import PageNotFound from "./pages/PageNotFound";
 import Projects from "./pages/Projects";
 
@@ -54,6 +55,7 @@ function Router() {
             <Route path="regular" element={<DisplayRegular />} />
             <Route path="experiences" element={<DisplayExperiences />} />
           </Route>
+          <Route path="certifications" element={<Certifications />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/*" element={<PageNotFound />} />
